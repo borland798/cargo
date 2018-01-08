@@ -5,6 +5,7 @@
   <li>MongoDB https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/</li>
 </ul>
 
+Ажиллуулах
 <ul>
   <li>cmd командын мөр нээнэ.</li>    
   <li>cd cargo гэж татсан project хавтас уруу орно.</li>
