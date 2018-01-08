@@ -2,7 +2,7 @@
 Шаардагдах програмууд
 <ul>
   <li>Node.js https://nodejs.org/download/release/v4.2.1/</li>
-  <li>MongoDB https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/<li>
+  <li>MongoDB https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/</li>
 </ul>
 
 <ul>
