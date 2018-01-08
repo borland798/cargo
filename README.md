@@ -6,8 +6,12 @@
 </ul>
 
 <ul>
-  <li>npm install командыг ажиллуулж node_modules хавтас үүснэ.</li>
-  <li>.env файл үүсгэнэ. дотор нь JWT_SECRET=... өөрийн хүссэн нууц үгээ бичнэ.</li>  
+  <li>cmd командын мөр нээнэ.</li>    
+  <li>cd cargo гэж татсан project хавтас уруу орно.<li>
+  <li>npm install командыг ажиллуулсанаар node_modules хавтас үүснэ.</li>
+  <li>.env файл үүсгэнэ. дотор нь JWT_SECRET=thisIsSecret гэж бичнэ.</li>
+  <li>npm start команд ажиллуулна.</li>
+  <li>Интернэт хөтөчөө нээгээд localhost:3000 дуудна.</li>
 </ul>
 
 
