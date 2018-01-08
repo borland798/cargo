@@ -1,0 +1,33 @@
+<div class="modal-content">
+        <div class="modal-header">
+            <button type="button" ng-click="vm.modal.cancel()" class="close">
+                <span aria-hidden="true">×</span>
+                <span class="sr-only">Close</span>
+            </button>
+            <h4 id="myModalLabel" class="modal-title">Ачааны дэлгэрэнгүй мэдээлэл</h4>
+        </div>
+
+        <div class="modal-body">
+            <b>
+                <ul class="list-group">
+                    <li class="list-group-item-heading">Хүлээн авагч</li>
+                    <li class="list-group-item">Нэр: {{vm.data.name}}</li>
+                    <li class="list-group-item">Утас: {{vm.data.number}}</li>
+                    <li class="list-group-item-heading">Автобус</li>
+                    <li class="list-group-item">Улсын дугаар: {{vm.data.bus.number}}</li>
+                    <li class="list-group-item">Хаанаас: {{vm.data.bus.from}}</li>
+                    <li class="list-group-item-heading">Байршил</li>
+                    <li class="list-group-item">Нэр: {{vm.data.location.name}}</li>
+                    <li class="list-group-item">Утас: {{vm.data.location.number}}</li>
+                    <li class="list-group-item">Хаяг: {{vm.data.location.address}}</li>
+                    <li class="list-group-item-heading">Бусад</li>
+                    <li class="list-group-item">Тайлбар: {{vm.data.description}}</li>
+                    <li class="list-group-item">Төлөв: {{vm.data.status ? 'Аваагүй' : 'Авсан'}}</li>
+                    <li class="list-group-item">Огноо: {{vm.data.date | date : 'd MMMM yyyy'}}</li>
+                </ul>
+            </b>
+        </div>
+        <div class="modal-footer">
+            <button ng-click="vm.modal.cancel()" type="button" class="btn btn-default">Хаах</button>
+        </div>
+</div>

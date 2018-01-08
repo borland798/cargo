@@ -1,0 +1,63 @@
+<navigation></navigation>
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <a ng-show="vm.isLoggedIn" ng-click="vm.popupAddForm()" class="btn btn-default pull-right">Ачаа нэмэх</a> <br><br><br>
+            <div class="input-group" ng-show="!vm.isLoggedIn">
+                <input type="text" class="form-control" placeholder="Нэр эсвэл утасны дугаараар хайх боломжтой" ng-model="text">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" ng-click="vm.search(text)">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+            </div>
+            <input ng-show="vm.isLoggedIn" type="text" class="form-control" placeholder="Хайх утгаа оруулна уу." ng-model="textfilter">
+            <div class="error">{{vm.message}}</div>
+            <div class="row list-group" ng-show="!vm.isLoggedIn">
+                <div class="col-xs-12 list-group-item" ng-repeat="cargo in vm.result.cargos">
+                    <h4><a ng-click="vm.popupDetailForm(cargo._id)">{{cargo.receiverName}}</a></h4>
+                    <p class="address">{{cargo.description}}</p>
+                    <span class="label label-warning label-facility">{{cargo.receiverNumber}}</span> &nbsp;
+                    <span class="label label-warning label-facility">{{cargo.date|date:'d MMMM yyyy'}}</span>
+                </div>
+            </div>
+            <div class="row list-group" ng-show="vm.isLoggedIn && !textfilter">
+                <div class="col-xs-12 list-group-item" ng-repeat="cargo in vm.page.cargos">
+                    <a ng-click="vm.received(cargo._id, cargo.status)" class="btn btn-danger pull-right" >{{cargo.status?'аваагүй':'авсан'}}</a>
+                    <h4><a ng-click="vm.popupDetailForm(cargo._id)">{{cargo.receiverName}}</a></h4>
+                    <p class="address">{{cargo.description}}</p>
+                    <span class="label label-warning label-facility">{{cargo.receiverNumber}}</span> &nbsp;
+                    <span class="label label-warning label-facility">{{cargo.date|date:'d MMMM yyyy'}}</span>
+                </div>
+            </div>
+            <div class="row list-group" ng-show="vm.isLoggedIn && textfilter">
+                <div class="col-xs-12 list-group-item" ng-repeat="cargo in vm.data.cargos | filter : textfilter">
+                    <a ng-click="vm.received(cargo._id, cargo.status)" class="btn btn-danger pull-right" >{{cargo.status?'аваагүй':'авсан'}}</a>
+                    <h4><a ng-click="vm.popupDetailForm(cargo._id)">{{cargo.receiverName}}</a></h4>
+                    <p class="address">{{cargo.description}}</p>
+                    <span class="label label-warning label-facility">{{cargo.receiverNumber}}</span> &nbsp;
+                    <span class="label label-warning label-facility">{{cargo.date | date:'d MMMM yyyy'}}</span>
+                </div>
+            </div>
+            <ul ng-show="vm.isLoggedIn && vm.pager.pages.length && !textfilter" class="pagination">
+                <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                    <a ng-click="vm.setPage(1)">First</a>
+                </li>
+                <li ng-class="{disabled:vm.pager.currentPage === 1}">
+                    <a ng-click="vm.setPage(vm.pager.currentPage - 1)">Previous</a>
+                </li>
+                <li ng-repeat="page in vm.pager.pages" ng-class="{active:vm.pager.currentPage === page}">
+                    <a ng-click="vm.setPage(page)">{{page}}</a>
+                </li>
+                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                    <a ng-click="vm.setPage(vm.pager.currentPage + 1)">Next</a>
+                </li>
+                <li ng-class="{disabled:vm.pager.currentPage === vm.pager.totalPages}">
+                    <a ng-click="vm.setPage(vm.pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>

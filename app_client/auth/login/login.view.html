@@ -1,0 +1,22 @@
+<navigation></navigation>
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <p class="lead">Хэрэв та шинээр бүртгүүлэхийг хүсвэл энд дарна уу. <a href="/#register?page={{ vm.returnPage }}">Бүртгүүлэх</a></p>
+        <form ng-submit="vm.onSubmit()">
+            <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+            <div class="form-group">
+                <label for="username">Нэр</label>
+                <input type="text" class="form-control" id="username" placeholder="Нэр" ng-model="vm.credentials.username">
+            </div>
+            <div class="form-group">
+                <label for="password">Нууц үг</label>
+                <input type="password" class="form-control" id="password" placeholder="Нууц үг" ng-model="vm.credentials.password">
+            </div>
+            <button type="submit" class="btn btn-default">Нэвтрэх</button>
+        </form>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>

@@ -1,0 +1,36 @@
+<navigation></navigation>
+<div class="container">
+    <page-header content="vm.pageHeader"></page-header>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <form ng-submit="vm.onSubmit()">
+                <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+                <h3>Хэрэглэгчийн мэдээлэл</h3>
+                <div class="form-group">
+                    <label for="username">Хэрэглэгчийн нэр</label>
+                    <input type="text" required="required" class="form-control" id="username" placeholder="Хэрэглэгчийн нэр" ng-model="vm.credentials.username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Нууц үг</label>
+                    <input type="password" required="required" class="form-control" id="password" placeholder="Нууц үг" ng-model="vm.credentials.password">
+                </div>
+                <br>
+                <h3>Тээш хадгалах газрын мэдээлэл</h3>
+                <div class="form-group">
+                    <label for="locName">Нэр</label>
+                    <input type="text" required="required" class="form-control" id="locName" placeholder="Нэр" ng-model="vm.location.name">
+                </div>
+                <div class="form-group">
+                    <label for="locNumber">Тээш хадгалах газрын утас</label>
+                    <input type="text" required="required" class="form-control" id="locNumber" placeholder="Утас" ng-model="vm.location.number">
+                </div>
+                <div class="form-group">
+                    <label for="locAddress">Хаяг</label>
+                    <input type="text" required="required" class="form-control" id="locAddress" placeholder="Хаяг" ng-model="vm.location.address">
+                </div>
+                <button type="submit" class="btn btn-default">Бүртгүүлэх!</button><br>
+            </form>
+        </div>
+    </div>
+    <footer-generic></footer-generic>
+</div>
